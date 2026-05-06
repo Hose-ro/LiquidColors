@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="220" height="220" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cmy" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#00B5FF"/>
+      <stop offset="1" stop-color="#FF2BB3"/>
+    </linearGradient>
+  </defs>
+  <rect width="220" height="220" fill="none"/>
+  <path d="M110 10 C150 70 190 110 190 150 C190 185 163 210 130 210 C95 210 70 185 70 150 C70 105 110 70 110 10Z" fill="url(#cmy)"/>
+  <path d="M82 118 C110 135 150 135 176 120 C179 128 180 137 180 145 C180 175 157 198 128 198 C90 198 70 170 70 145 C70 134 73 125 76 118 C79 121 82 122 82 118Z" fill="#FF2BB3" opacity="0.85"/>
+  <path d="M75 150 C92 182 112 196 136 196 C155 196 170 188 178 176 C173 193 153 210 128 210 C96 210 70 187 70 150Z" fill="#FFD54F" opacity="0.9"/>
+  <path d="M135 40 C158 76 171 103 177 121" fill="none" stroke="#ffffff" stroke-width="7" stroke-linecap="round" opacity="0.7"/>
+</svg>

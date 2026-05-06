@@ -1,0 +1,111 @@
+/* =======================
+   Reseñas – Panel Admin
+======================= */
+
+/* Fila de reseña */
+.resena-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.resena-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+@media (min-width: 768px) {
+  .resena-row {
+    grid-template-columns: 220px 1fr auto;
+    gap: 1.25rem;
+    align-items: start;
+  }
+}
+
+/* Metadatos del autor */
+.resena-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.resena-autor strong {
+  font-size: 0.9rem;
+}
+
+/* Rating */
+.resena-rating {
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.resena-producto {
+  font-size: 0.78rem;
+}
+
+/* Comentario */
+.resena-comentario p {
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--text);
+}
+
+.btn-link-inline {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--grad-b);
+  font-size: 0.82rem;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.btn-link-inline:hover {
+  color: var(--grad-a);
+}
+
+/* Acciones */
+.resena-acciones {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+/* Toast flotante (igual al del blog) */
+.toast-floating {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1.1rem;
+  background: #1f2937;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  font-size: 0.875rem;
+  color: var(--text);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.2s, transform 0.2s;
+  pointer-events: none;
+  max-width: 320px;
+}
+
+.toast-floating.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.toast-floating.is-error {
+  border-color: rgba(239, 68, 68, 0.4);
+  color: #fca5a5;
+}

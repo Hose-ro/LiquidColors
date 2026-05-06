@@ -1,0 +1,54 @@
+# Dependencies
+/node_modules
+/vendor
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Builds
+/public/build
+/public/hot
+/public/storage
+
+# Logs
+*.log
+/storage/logs/
+
+# Database and dumps
+*.sqlite
+*.db
+*.sql
+*.dump
+
+# Coverage / cache / temp
+.phpunit.result.cache
+/.phpunit.cache
+/bootstrap/cache/*.php
+/storage/framework/cache/
+/storage/framework/sessions/
+/storage/framework/views/
+/storage/pail
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+/.fleet
+/.idea
+/.nova
+/.vscode
+/.zed
+
+# Secrets / certificates
+*.pem
+*.key
+*.crt
+*.p12
+/auth.json
+.npmrc
+credentials.json
+service-account.json
+
+Homestead.json
+Homestead.yaml

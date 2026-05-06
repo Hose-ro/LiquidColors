@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="es" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Panel Blog – Liquid Colors (Admin)</title>
+  <!-- LEGACY: demo estático. El panel oficial vive en Laravel: /admin/posts -->
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Estilos generales del sitio -->
+  <link rel="stylesheet" href="/css/styles.css">
+  <!-- Estilos específicos del panel de blog -->
+  <link rel="stylesheet" href="/css/blog-admin.css">
+</head>
+<body>
+
+<!-- NAVBAR (misma que el resto del sitio) -->
+<nav class="navbar navbar-expand-lg navbar-dark nav-glass fixed-top nav-glass-soft">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+      <img src="/imgs/logo.svg" class="logo-brand" alt="Liquid Colors" />
+      <span class="fw-semibold">Liquid Colors</span>
+      <span class="badge bg-warning text-dark ms-2 small">Admin</span>
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="mainNav" class="collapse navbar-collapse">
+      <ul class="navbar-nav center-nav gap-lg-4">
+        <li class="nav-item"><a class="nav-link" href="./index.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="./products.html">Productos</a></li>
+        <li class="nav-item"><a class="nav-link" href="./index.html#categorias">Categorías</a></li>
+        <li class="nav-item"><a class="nav-link" href="./order.html">Personalización</a></li>
+        <li class="nav-item"><a class="nav-link active" href="blog-admin.html">Blog (Admin)</a></li>
+      </ul>
+
+      <div class="d-flex align-items-center gap-3 ms-auto">
+        <span class="text-muted-300 small d-none d-md-inline">Sesión: admin@liquidcolors.com</span>
+        <a class="icon-link" href="#"><i class="bi bi-gear"></i></a>
+        <a class="icon-link text-danger" href="/admin/logout"><i class="bi bi-box-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO / CABECERA DEL PANEL -->
+<header class="blog-admin-hero">
+  <div class="container position-relative">
+    <div class="alert alert-warning small mb-4" role="alert">
+      Vista legacy del prototipo. La administración oficial de publicaciones vive en <a href="/admin/posts" class="alert-link">/admin/posts</a>.
+    </div>
+    <div class="row g-4 align-items-center">
+      <div class="col-lg-7">
+        <div class="pill mb-3">
+          <i class="bi bi-journal-text me-2"></i> Panel del blog
+        </div>
+        <h1 class="display-5 fw-bold lh-1 mb-3">
+          Blog de <span class="grad-text">Liquid Colors</span>
+        </h1>
+        <p class="lead text-muted-300 mb-3">
+          Administra noticias, artículos diarios y pedidos entregados de la tienda.  
+          Aquí puedes crear nuevas publicaciones y revisar el historial.
+        </p>
+        <div class="d-flex flex-wrap gap-3">
+          <button class="btn btn-grad btn-lg d-inline-flex align-items-center gap-2" data-bs-toggle="modal" data-bs-target="#modalPost">
+            <i class="bi bi-plus-lg"></i> Nueva publicación
+          </button>
+          <button class="btn btn-outline-light btn-lg" id="btnFiltrarHoy">
+            Hoy <span class="badge bg-light text-dark ms-1" id="badgeHoy">0</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="col-lg-5">
+        <div class="blog-admin-stats card-dark rounded-4 p-3 p-md-4">
+          <div class="d-flex align-items-center justify-content-between mb-3">
+            <div class="d-flex align-items-center gap-3">
+              <div class="icon-circle-sm">
+                <i class="bi bi-calendar-week"></i>
+              </div>
+              <div>
+                <div class="small text-muted-300">Semana actual</div>
+                <div class="fw-semibold" id="lblSemana">—</div>
+              </div>
+            </div>
+            <span class="badge bg-primary-subtle text-light small">Resumen</span>
+          </div>
+
+          <div class="border-top border-secondary-subtle my-3"></div>
+
+          <div class="row g-3 text-center text-md-start">
+            <div class="col-4">
+              <div class="small text-muted-300">Noticias</div>
+              <div class="h4 fw-bold" id="statNoticias">0</div>
+            </div>
+            <div class="col-4">
+              <div class="small text-muted-300">Artículos</div>
+              <div class="h4 fw-bold" id="statArticulos">0</div>
+            </div>
+            <div class="col-4">
+              <div class="small text-muted-300">Pedidos</div>
+              <div class="h4 fw-bold" id="statPedidos">0</div>
+            </div>
+          </div>
+
+          <div class="mt-3 small text-muted-300">
+            <i class="bi bi-info-circle me-1"></i>
+            Los conteos se actualizan al crear o cambiar el tipo de publicación.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- CONTENIDO PRINCIPAL -->
+<main class="py-5">
+  <div class="container">
+    <div class="row g-4">
+      <!-- LISTADO PRINCIPAL -->
+      <div class="col-lg-8">
+        <div class="d-flex flex-wrap align-items-center justify-content-between mb-3 gap-2">
+          <div>
+            <h4 class="fw-semibold mb-0">Publicaciones recientes</h4>
+            <small class="text-muted-300">Últimos artículos creados por ti</small>
+          </div>
+          <div class="d-flex flex-wrap gap-2">
+            <select class="form-select form-select-sm blog-admin-filter" id="filtroTipo">
+              <option value="todas">Todas las categorías</option>
+              <option value="noticia">Noticias y avisos</option>
+              <option value="articulo">Artículos diarios</option>
+              <option value="pedido">Pedidos entregados</option>
+            </select>
+            <select class="form-select form-select-sm blog-admin-filter" id="filtroEstado">
+              <option value="todos">Todos los estados</option>
+              <option value="publicado">Publicados</option>
+              <option value="borrador">Borradores</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="card-dark rounded-4 p-3 p-md-4 blog-admin-list" id="listaPosts">
+          <!-- Items generados por JS -->
+        </div>
+      </div>
+
+      <!-- LATERAL / PANEL RÁPIDO -->
+      <div class="col-lg-4">
+        <div class="card-dark rounded-4 p-3 p-md-4 mb-4">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <h6 class="fw-semibold mb-0">Acciones rápidas</h6>
+            <button class="btn btn-sm btn-grad" data-bs-toggle="modal" data-bs-target="#modalPost">
+              <i class="bi bi-plus-lg me-1"></i>Nuevo
+            </button>
+          </div>
+          <ul class="list-unstyled small m-0 blog-admin-quick">
+            <li><button class="btn-quick" data-type="noticia"><i class="bi bi-megaphone me-2"></i>Nueva noticia o aviso</button></li>
+            <li><button class="btn-quick" data-type="articulo"><i class="bi bi-journal-text me-2"></i>Nuevo artículo diario</button></li>
+            <li><button class="btn-quick" data-type="pedido"><i class="bi bi-truck me-2"></i>Registrar pedidos entregados</button></li>
+          </ul>
+        </div>
+
+        <div class="card-dark rounded-4 p-3 p-md-4">
+          <h6 class="fw-semibold mb-2">Borradores</h6>
+          <div class="small text-muted-300 mb-2">Publicaciones sin publicar todavía.</div>
+          <div id="listaBorradores" class="blog-admin-drafts small">
+            <!-- Borradores desde JS -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- MODAL: NUEVA / EDITAR PUBLICACIÓN -->
+<div class="modal fade" id="modalPost" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content card-dark">
+      <form id="formPost">
+        <div class="modal-header border-0">
+          <h5 class="modal-title fw-semibold" id="modalTitle">Nueva publicación</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body pt-0">
+          <div class="row g-3">
+            <div class="col-md-4">
+              <label class="form-label small">Tipo de publicación</label>
+              <select class="form-select" id="tipoPost" name="tipo" required>
+                <option value="noticia">Noticia / Aviso</option>
+                <option value="articulo">Artículo diario</option>
+                <option value="pedido">Pedidos entregados</option>
+              </select>
+            </div>
+            <div class="col-md-4">
+              <label class="form-label small">Fecha</label>
+              <input type="date" class="form-control" id="fechaPost" name="fecha" required>
+            </div>
+            <div class="col-md-4">
+              <label class="form-label small">Estado</label>
+              <select class="form-select" id="estadoPost" name="estado">
+                <option value="publicado">Publicado</option>
+                <option value="borrador">Borrador</option>
+              </select>
+            </div>
+
+            <div class="col-12">
+              <label class="form-label small">Título</label>
+              <input type="text" class="form-control" id="tituloPost" name="titulo" maxlength="120" required>
+            </div>
+
+            <div class="col-12">
+              <label class="form-label small">Resumen corto</label>
+              <input type="text" class="form-control" id="resumenPost" name="resumen" maxlength="180" placeholder="Ej. Aviso importante sobre horarios de entrega">
+            </div>
+
+            <div class="col-12">
+              <label class="form-label small">Contenido</label>
+              <textarea class="form-control" id="contenidoPost" name="contenido" rows="5" placeholder="Describe el aviso, artículo o detalle de los pedidos entregados..."></textarea>
+            </div>
+
+            <!-- Campos especiales cuando es tipo "pedido" -->
+            <div class="col-md-6 d-none" id="grpPedidos">
+              <label class="form-label small">Pedidos entregados</label>
+              <input type="number" min="1" class="form-control" id="numPedidos" name="numPedidos" placeholder="Ej. 12">
+            </div>
+            <div class="col-md-6 d-none" id="grpRango">
+              <label class="form-label small">Rango de fechas</label>
+              <input type="text" class="form-control" id="rangoFechas" name="rangoFechas" placeholder="Ej. 03 nov – 09 nov">
+            </div>
+
+          </div>
+        </div>
+        <div class="modal-footer border-0">
+          <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Cancelar</button>
+          <button type="submit" class="btn btn-grad">
+            <i class="bi bi-save2 me-1"></i> Guardar publicación
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../scripts/blog-admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="es" data-bs-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Blog | Liquid Colors</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="../css/styles.css?v=20260416b" />
+    <link rel="stylesheet" href="../css/blog.css?v=20260415a" />
+  </head>
+  <body>
+    <a class="skip-link" href="#blogContent">Saltar al contenido del blog</a>
+
+    <nav class="navbar navbar-expand-lg navbar-dark nav-glass sticky-top" aria-label="Principal">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="./index.html">
+          <img src="../imgs/logo.svg" class="logo-brand" alt="Liquid Colors" />
+          <span class="fw-semibold">Liquid Colors</span>
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+          aria-controls="mainNav"
+          aria-expanded="false"
+          aria-label="Abrir navegación"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div id="mainNav" class="collapse navbar-collapse">
+          <ul class="navbar-nav center-nav">
+            <li class="nav-item"><a class="nav-link" href="./index.html#inicio">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="./products.html">Productos</a></li>
+            <li class="nav-item"><a class="nav-link" href="./index.html#categorias">Categorías</a></li>
+            <li class="nav-item"><a class="nav-link nav-link-cta" href="./order.html">Personalización</a></li>
+            <li class="nav-item"><a class="nav-link active" href="./blog.html" aria-current="page">Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="./index.html#contacto">Contacto</a></li>
+          </ul>
+
+          <div class="nav-actions d-flex align-items-center gap-2 ms-auto">
+            <a class="icon-link" href="#blogToolbar" aria-label="Buscar en el blog">
+              <i class="bi bi-search" aria-hidden="true"></i>
+            </a>
+            
+            <a class="icon-link position-relative" href="./products.html#shoppingCart" aria-label="Ver carrito">
+              <i class="bi bi-cart" aria-hidden="true"></i>
+              <span id="cartBadge" class="badge rounded-pill cart-badge">0</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <header class="blog-hero">
+      <div class="container">
+        <div class="blog-hero-grid">
+          <div class="blog-copy" data-reveal="up">
+            
+            <h1 class="blog-title fw-bold mb-3">
+              Blog de <span class="grad-text">Liquid Colors</span>
+            </h1>
+            <p class="blog-lead text-muted-300 mb-0">
+              Artículos, avisos y reportes de entregas publicados en un solo espacio de consulta.
+            </p>
+
+            <div class="blog-highlights">
+              <div class="blog-chip">
+                <strong id="todayCount">0</strong>
+                <span>publicaciones del día</span>
+              </div>
+              <div class="blog-chip">
+                <strong id="feedTotal">0</strong>
+                <span>publicaciones totales</span>
+              </div>
+              <div class="blog-chip">
+                <strong id="deliveryCount">0</strong>
+                <span>pedidos entregados</span>
+              </div>
+            </div>
+          </div>
+
+          
+        </div>
+      </div>
+    </header>
+
+    <main id="blogContent" class="blog-main">
+      <div class="container">
+        <section id="blogToolbar" class="blog-toolbar card-dark" data-reveal="up">
+          <div class="blog-toolbar-copy">
+            <h2 class="fw-semibold mb-1">Explora el feed</h2>
+            <p class="text-muted-300 mb-0">Busca por título o contenido y filtra por fecha para localizar publicaciones concretas.</p>
+          </div>
+
+          <div class="blog-toolbar-controls">
+            <div class="blog-search-group">
+              <label class="visually-hidden" for="searchPost">Buscar publicación</label>
+              <div class="input-group">
+                <span class="input-group-text bg-transparent border-secondary-subtle">
+                  <i class="bi bi-search" aria-hidden="true"></i>
+                </span>
+                <input id="searchPost" type="search" class="form-control" placeholder="Buscar publicación..." />
+              </div>
+            </div>
+
+            <div class="blog-filter-group">
+              <label class="visually-hidden" for="filterDate">Filtrar por fecha</label>
+              <select id="filterDate" class="form-select">
+                <option value="all" selected>Todas las fechas</option>
+                <option value="today">Hoy</option>
+                <option value="week">Últimos 7 días</option>
+              </select>
+            </div>
+          </div>
+        </section>
+
+        <section id="avisos" class="blog-section" data-reveal="up">
+          <div class="blog-section-header">
+            <div>
+              <h2 class="fw-bold mb-2">Noticias y <span class="grad-text">avisos</span></h2>
+              <p class="text-muted-300 mb-0">Actualizaciones operativas, promociones o cambios importantes para clientes.</p>
+            </div>
+            <span id="noticesMeta" class="blog-meta-pill">—</span>
+          </div>
+
+          <div id="avisosGrid" class="row g-4" aria-live="polite"></div>
+        </section>
+
+        <section id="posts" class="blog-section" data-reveal="up">
+          <div class="blog-section-header">
+            <div>
+              <h2 class="fw-bold mb-2">Artículos <span class="grad-text">recientes</span></h2>
+              <p class="text-muted-300 mb-0">Contenido reciente publicado desde administración, con lectura completa en modal.</p>
+            </div>
+            <span id="postsMeta" class="blog-meta-pill">—</span>
+          </div>
+
+          <div id="postsGrid" class="row g-4" aria-live="polite"></div>
+
+          <div class="blog-actions-center">
+            <button id="btnLoadMore" type="button" class="btn btn-surface d-none">Ver más artículos</button>
+          </div>
+        </section>
+
+        <section id="entregas" class="blog-section" data-reveal="up">
+          <div class="blog-section-header">
+            <div>
+              <h2 class="fw-bold mb-2">Pedidos <span class="grad-text">entregados</span></h2>
+              <p class="text-muted-300 mb-0">Resumen semanal de entregas registradas desde el panel administrativo.</p>
+            </div>
+            <span id="deliveriesMeta" class="blog-meta-pill">—</span>
+          </div>
+
+          <div class="delivery-table-card card-dark">
+            <div class="table-responsive">
+              <table class="table align-middle m-0 blog-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Título</th>
+                    <th scope="col">Pedidos</th>
+                    <th scope="col">Rango</th>
+                    <th scope="col">Resumen</th>
+                  </tr>
+                </thead>
+                <tbody id="entregasBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer-dark">
+      <div class="container">
+        <div class="row g-4 g-lg-5">
+          <div class="col-lg-4">
+            <div class="footer-brand">
+              <div class="d-flex align-items-center gap-2 mb-3">
+                <img src="../imgs/logo.svg" class="logo-brand" alt="Liquid Colors" />
+                <span class="fw-semibold fs-5">Liquid Colors</span>
+              </div>
+              <p class="text-muted-300 mb-0">
+                Blog público con novedades de tienda, artículos de producción y seguimiento de entregas recientes.
+              </p>
+              <div class="d-flex gap-3 footer-socials">
+                <a class="social" href="#" aria-label="Facebook"><i class="bi bi-facebook" aria-hidden="true"></i></a>
+                <a class="social" href="#" aria-label="Instagram"><i class="bi bi-instagram" aria-hidden="true"></i></a>
+                <a class="social" href="#" aria-label="TikTok"><i class="bi bi-tiktok" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-lg-2">
+            <h6 class="fw-semibold mb-3">Explorar</h6>
+            <ul class="list-unstyled m-0 footer-links">
+              <li><a href="./index.html#inicio">Inicio</a></li>
+              <li><a href="./products.html">Productos</a></li>
+              <li><a href="./order.html">Personalización</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-lg-3">
+            <h6 class="fw-semibold mb-3">Contenido</h6>
+            <ul class="list-unstyled m-0 footer-links">
+              <li><a href="#avisos">Avisos</a></li>
+              <li><a href="#posts">Artículos</a></li>
+              <li><a href="#entregas">Entregas semanales</a></li>
+            </ul>
+          </div>
+
+          <div class="col-12 col-lg-3">
+            <h6 class="fw-semibold mb-3">Empresa</h6>
+            <ul class="list-unstyled m-0 footer-links">
+              <li><a href="./terms.html">Términos y condiciones</a></li>
+              <li><a href="./privacy.html">Política de privacidad</a></li>
+            </ul>
+            <a href="/admin/login" class="footer-admin-link">
+              <i class="bi bi-lock" aria-hidden="true"></i>
+              <span>Panel administrador</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-bottom d-flex flex-column flex-md-row align-items-center justify-content-between gap-3">
+          <div class="small text-muted-300">© 2026 Liquid Colors. Todos los derechos reservados.</div>
+          <div class="small text-muted-300">Novedades, artículos y entregas recientes en consulta pública.</div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="modal fade" id="postModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+        <div class="modal-content card-dark blog-modal">
+          <div class="modal-header">
+            <div>
+              <div id="postModalMeta" class="blog-modal-meta"></div>
+              <h3 id="postModalTitle" class="modal-title fw-semibold mb-0">Artículo</h3>
+            </div>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body">
+            <div id="postModalBody" class="blog-modal-body"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer src="../scripts/blog.js?v=20260415b"></script>
+  </body>
+</html>

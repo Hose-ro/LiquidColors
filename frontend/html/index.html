@@ -1,0 +1,616 @@
+<!doctype html>
+<html lang="es" data-bs-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Liquid Colors | Sublimación y vinil personalizado</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="../css/styles.css?v=20260429b" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Saltar al contenido</a>
+
+    <nav class="navbar navbar-expand-lg navbar-dark nav-glass fixed-top" aria-label="Principal">
+      <div class="container navbar-shell">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="#inicio" aria-label="Liquid Colors, ir al inicio">
+          <img src="../imgs/logo.svg" class="logo-brand" alt="Liquid Colors" />
+          <span class="fw-semibold">Liquid Colors</span>
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+          aria-controls="mainNav"
+          aria-expanded="false"
+          aria-label="Abrir navegación"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div id="mainNav" class="collapse navbar-collapse">
+          <ul class="navbar-nav center-nav">
+            <li class="nav-item"><a class="nav-link active" data-section-link href="#inicio">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="./products.html">Productos</a></li>
+            <li class="nav-item"><a class="nav-link" data-section-link href="#categorias">Categorías</a></li>
+            <li class="nav-item"><a class="nav-link nav-link-cta" href="./order.html">Personalización</a></li>
+            <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+            <li class="nav-item"><a class="nav-link" data-section-link href="#contacto">Contacto</a></li>
+          </ul>
+
+          <div class="nav-actions d-flex align-items-center gap-2 ms-auto">
+            <a class="icon-link" href="#destacados" aria-label="Explorar catálogo">
+              <i class="bi bi-search" aria-hidden="true"></i>
+            </a>
+            
+            <a class="icon-link position-relative" href="./order.html" aria-label="Abrir módulo de pedido">
+              <i class="bi bi-cart" aria-hidden="true"></i>
+              <span id="cartBadge" class="badge rounded-pill cart-badge">0</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main id="main-content">
+      <header id="inicio" class="hero-section">
+        <div class="container position-relative hero-shell">
+          <div class="row align-items-center hero-grid g-4 g-xl-5">
+            <div class="col-lg-6">
+              <div class="hero-copy" data-reveal="up">
+                
+
+                <h1 class="hero-title fw-bold mb-3">
+                  Personaliza tus productos con
+                  <span class="grad-text">sublimación premium</span>
+                </h1>
+
+                <p class="hero-lead text-muted-300 mb-0">
+                  Camisetas, tazas y fundas con impresión vibrante, materiales confiables y un proceso de pedido claro desde el primer contacto.
+                </p>
+
+                <div class="hero-actions">
+                  <a href="#destacados" class="btn btn-grad btn-lg hero-primary-btn d-inline-flex align-items-center gap-2">
+                    Ver catálogo
+                    <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                  </a>
+                  <a href="./order.html" class="btn btn-surface btn-lg">Personalizar ahora</a>
+                </div>
+
+                <div class="hero-stats" aria-label="Indicadores destacados">
+                  <div class="stat-card" data-reveal="up" style="--reveal-delay: 0.08s">
+                    <div class="stat-value">50+</div>
+                    <div class="stat-label">Productos listos para personalizar</div>
+                  </div>
+                  <div class="stat-card" data-reveal="up" style="--reveal-delay: 0.14s">
+                    <div class="stat-value">100+</div>
+                    <div class="stat-label">Clientes satisfechos con sus pedidos</div>
+                  </div>
+                  <div class="stat-card" data-reveal="up" style="--reveal-delay: 0.2s">
+                    <div class="stat-value">99%</div>
+                    <div class="stat-label">Satisfacción en calidad y color</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-xl-5 ms-xl-auto">
+              <div class="hero-visual-wrap" data-reveal="fade" style="--reveal-delay: 0.08s">
+                <div class="hero-image card-dark shadow-lg overflow-hidden">
+                  <img
+                    class="w-100 h-100 object-cover"
+                    src="../imgs/hero.svg"
+                    alt="Productos personalizados con impresión por sublimación"
+                    fetchpriority="high"
+                  />
+
+                  <div class="hero-image-badge">
+                    <span class="hero-image-title">Producción a medida</span>
+                    <span class="hero-image-copy">Sublimación y vinil con color duradero y acabados más limpios.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-glow" aria-hidden="true"></div>
+      </header>
+
+      <section class="section-dark section-spacing-sm">
+        <div class="container">
+          <div class="row g-3 g-lg-4">
+            <div class="col-12 col-sm-6 col-xl-3">
+              <article class="benefit-card text-center" data-reveal="up">
+                <div class="icon-circle mb-3"><i class="bi bi-truck" aria-hidden="true"></i></div>
+                <h6 class="mb-2">Envío rápido</h6>
+                <p class="text-muted-300 small m-0">Entrega estimada de 2 a 5 días hábiles con seguimiento claro.</p>
+              </article>
+            </div>
+            <div class="col-12 col-sm-6 col-xl-3">
+              <article class="benefit-card text-center" data-reveal="up" style="--reveal-delay: 0.05s">
+                <div class="icon-circle mb-3"><i class="bi bi-shield-check" aria-hidden="true"></i></div>
+                <h6 class="mb-2">Garantía de calidad</h6>
+                <p class="text-muted-300 small m-0">Revisamos materiales y acabados para que el resultado final se vea profesional.</p>
+              </article>
+            </div>
+            <div class="col-12 col-sm-6 col-xl-3">
+              <article class="benefit-card text-center" data-reveal="up" style="--reveal-delay: 0.1s">
+                <div class="icon-circle mb-3"><i class="bi bi-palette2" aria-hidden="true"></i></div>
+                <h6 class="mb-2">Diseños personalizados</h6>
+                <p class="text-muted-300 small m-0">Trabajamos con tus ideas, logos o conceptos para piezas únicas.</p>
+              </article>
+            </div>
+            <div class="col-12 col-sm-6 col-xl-3">
+              <article class="benefit-card text-center" data-reveal="up" style="--reveal-delay: 0.15s">
+                <div class="icon-circle mb-3"><i class="bi bi-headset" aria-hidden="true"></i></div>
+                <h6 class="mb-2">Soporte cercano</h6>
+                <p class="text-muted-300 small m-0">Acompañamiento antes, durante y después del pedido para resolver dudas.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="categorias" class="section-spacing">
+        <div class="container">
+          <div class="section-intro text-center" data-reveal="up">
+          
+            <h2 class="fw-bold">Explora nuestras <span class="grad-text">categorías</span></h2>
+            <p class="text-muted-300">Una selección amplia de productos listos para personalizar con tu marca, idea o estilo.</p>
+          </div>
+
+          <div class="row g-4">
+            <div class="col-12 col-md-6 col-xl-4 col-xxl-3" data-reveal="up">
+              <a class="cat-card card-dark d-block" href="./products.html?cat=camisetas">
+                <img
+                  src="https://images.unsplash.com/photo-1604177091072-b7b677a077f3?q=80&amp;w=1200&amp;auto=format&amp;fit=crop"
+                  alt="Camisetas personalizadas"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div class="cat-overlay">
+                  <span class="cat-kicker">Textil</span>
+                  <h5 class="mb-1">Camisetas</h5>
+                  <p class="small m-0 text-muted-300">150+ modelos disponibles para marcas, eventos o regalos.</p>
+                  <span class="link-more">Ver más <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+                </div>
+              </a>
+            </div>
+
+            <div class="col-12 col-md-6 col-xl-4 col-xxl-3" data-reveal="up" style="--reveal-delay: 0.05s">
+              <a class="cat-card card-dark d-block" href="./products.html?cat=tazas">
+                <img
+                  src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?q=80&amp;w=1200&amp;auto=format&amp;fit=crop"
+                  alt="Tazas personalizadas"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div class="cat-overlay">
+                  <span class="cat-kicker">Hogar y regalo</span>
+                  <h5 class="mb-1">Tazas</h5>
+                  <p class="small m-0 text-muted-300">Opciones clásicas y térmicas para campañas, detalles o colecciones.</p>
+                  <span class="link-more">Ver más <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+                </div>
+              </a>
+            </div>
+
+            <div class="col-12 col-md-6 col-xl-4 col-xxl-3" data-reveal="up" style="--reveal-delay: 0.1s">
+              <a class="cat-card card-dark d-block" href="./products.html?cat=fundas">
+                <img
+                  src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?q=80&amp;w=1200&amp;auto=format&amp;fit=crop"
+                  alt="Fundas personalizadas"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div class="cat-overlay">
+                  <span class="cat-kicker">Tecnología</span>
+                  <h5 class="mb-1">Fundas</h5>
+                  <p class="small m-0 text-muted-300">Diseños resistentes y visualmente limpios para uso diario.</p>
+                  <span class="link-more">Ver más <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+                </div>
+              </a>
+            </div>
+
+            <div class="col-12 col-md-6 col-xl-4 col-xxl-3" data-reveal="up" style="--reveal-delay: 0.15s">
+              <a class="cat-card card-dark d-block" href="./products.html?cat=bolsas">
+                <img
+                  src="https://images.unsplash.com/photo-1516387938699-a93567ec168e?q=80&amp;w=1200&amp;auto=format&amp;fit=crop"
+                  alt="Bolsas personalizadas"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div class="cat-overlay">
+                  <span class="cat-kicker">Merch</span>
+                  <h5 class="mb-1">Bolsas</h5>
+                  <p class="small m-0 text-muted-300">Formatos reutilizables con presencia visual más cuidada.</p>
+                  <span class="link-more">Ver más <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="destacados" class="section-spacing">
+        <div class="container">
+          <div class="section-intro text-center" data-reveal="up">
+          
+            <h2 class="fw-bold">Productos <span class="grad-text">destacados</span></h2>
+            <p class="text-muted-300">Piezas con mejor salida entre clientes que buscan un resultado premium y rápido de personalizar.</p>
+          </div>
+
+          <div class="destacados-wrapper" data-reveal="fade">
+            <button class="car-arrow prev" aria-label="Productos anteriores">
+              <i class="bi bi-chevron-left" aria-hidden="true"></i>
+            </button>
+
+            <div
+              id="carouselDestacados"
+              class="destacados-track"
+              role="region"
+              aria-label="Carrusel de productos destacados"
+            >
+              <!-- Aquí inserta JS las tarjetas -->
+            </div>
+
+            <button class="car-arrow next" aria-label="Productos siguientes">
+              <i class="bi bi-chevron-right" aria-hidden="true"></i>
+            </button>
+
+            <span class="edge-fade left" aria-hidden="true"></span>
+            <span class="edge-fade right" aria-hidden="true"></span>
+          </div>
+
+          <div class="text-center mt-4" data-reveal="up">
+            <a href="products.html" class="btn btn-surface btn-lg px-4">Ver todos los productos</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="pedido" class="order-section section-spacing">
+        <div class="container">
+          <div class="order-entry-shell card-dark">
+            <div class="row g-4 align-items-center">
+              <div class="col-lg-7">
+                <span class="section-eyebrow">Módulo independiente</span>
+                <h2 class="fw-bold mb-3">El pedido ahora continúa en una vista separada</h2>
+                <p class="text-muted-300 mb-4">
+                  Separamos la confirmación del pedido de la home para que trabajes producto, archivo y envío en un flujo más enfocado.
+                </p>
+
+                <ul class="module-preview-list">
+                  <li>La compra directa y el carrito llegan con referencia precargada.</li>
+                  <li>Adjuntas diseño, revisas el estimado y confirmas datos en una sola vista.</li>
+                  <li>La página principal queda libre para explorar catálogo, blog y categorías.</li>
+                </ul>
+
+                <div class="hero-actions">
+                  <a href="./order.html" class="btn btn-grad btn-lg">Continuar pedido</a>
+                  <a href="./products.html" class="btn btn-surface btn-lg">Ver catálogo</a>
+                </div>
+              </div>
+
+              <div class="col-lg-5">
+                <div class="module-preview-panel">
+                  <article class="module-preview-step">
+                    <span>01</span>
+                    <div>
+                      <strong>Selecciona producto o carrito</strong>
+                      <p class="mb-0">La referencia elegida se lleva al módulo de pedido para seguir sin volver a empezar.</p>
+                    </div>
+                  </article>
+
+                  <article class="module-preview-step">
+                    <span>02</span>
+                    <div>
+                      <strong>Adjunta el diseño y define entrega</strong>
+                      <p class="mb-0">Cantidad, técnica, archivo, envío y fecha quedan concentrados en una sola pantalla.</p>
+                    </div>
+                  </article>
+
+                  <article class="module-preview-step">
+                    <span>03</span>
+                    <div>
+                      <strong>Revisa el resumen final</strong>
+                      <p class="mb-0">El estimado y la preselección permanecen visibles durante todo el proceso.</p>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="resenas" class="section-spacing section-dark">
+        <div class="container">
+          <div class="section-intro text-center" data-reveal="up">
+            <span class="section-eyebrow">Lo que dicen nuestros clientes</span>
+            <h2 class="fw-bold">Opiniones <span class="grad-text">reales</span></h2>
+            <p class="text-muted-300">Pedidos personalizados, resultados concretos. Aquí algunas experiencias de nuestros clientes.</p>
+          </div>
+
+          <div class="row g-4 mt-2">
+            <div class="col-12 col-md-6 col-lg-4" data-reveal="up">
+              <article class="testimonial-card card-dark">
+                <div class="testimonial-stars" aria-label="5 de 5 estrellas">
+                  <i class="bi bi-star-fill text-warning" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill text-warning" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill text-warning" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill text-warning" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill text-warning" aria-hidden="true"></i>
+                </div>
+                <p class="testimonial-text">"Hicimos camisetas para todo el equipo y quedaron increíbles. La calidad del sublimado es muy buena y la entrega fue rápida."</p>
+                <div class="testimonial-author">
+                  <div class="testimonial-avatar" aria-hidden="true">MA</div>
+                  <div>
+                    <strong>María A.</strong>
+                    <span>Camisetas corporativas · 30 piezas</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4" data-reveal="up" style="--reveal-delay: 0.07s">
+              <article class="testimonial-card card-dark">
+                <div class="testimonial-stars" aria-label="5 de 5 estrellas">
+                  <i class="bi bi-star-fill text-warning" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill text-warning" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill text-warning" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill text-warning" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill text-warning" aria-hidden="true"></i>
+                </div>
+                <p class="testimonial-text">"Las tazas personalizadas con el logo de mi negocio salieron perfectas. El proceso fue muy fácil, adjunté el diseño y en pocos días las tuve en casa."</p>
+                <div class="testimonial-author">
+                  <div class="testimonial-avatar" aria-hidden="true">CR</div>
+                  <div>
+                    <strong>Carlos R.</strong>
+                    <span>Tazas con logo · 12 piezas</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4" data-reveal="up" style="--reveal-delay: 0.14s">
+              <article class="testimonial-card card-dark">
+                <div class="testimonial-stars" aria-label="4 de 5 estrellas">
+                  <i class="bi bi-star-fill text-warning" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill text-warning" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill text-warning" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill text-warning" aria-hidden="true"></i>
+                  <i class="bi bi-star text-secondary" aria-hidden="true"></i>
+                </div>
+                <p class="testimonial-text">"Fundas para todo el equipo de trabajo. El acabado es muy profesional. Los colores se ven vibrantes y no se han despegado nada después de varios meses."</p>
+                <div class="testimonial-author">
+                  <div class="testimonial-avatar" aria-hidden="true">LG</div>
+                  <div>
+                    <strong>Laura G.</strong>
+                    <span>Fundas personalizadas · 20 piezas</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="text-center mt-4" data-reveal="up">
+            <a href="./products.html" class="btn btn-surface btn-lg">Ver catálogo y dejar reseña</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="contacto" class="contact-section section-spacing">
+        <div class="container">
+          <div class="section-intro text-center" data-reveal="up">
+            
+            <h2 class="fw-bold">Hablemos de tu <span class="grad-text">pedido</span></h2>
+            <p class="text-muted-300">
+              Escríbenos por el canal que prefieras para resolver dudas, revisar archivos o pedir una cotización rápida.
+            </p>
+          </div>
+
+          <div class="contact-grid">
+            <aside class="contact-panel card-dark" data-reveal="up">
+              <h3 class="fw-semibold mb-3">Canales directos</h3>
+              <p class="text-muted-300">
+                Para pedidos urgentes, WhatsApp o llamada suelen ser más rápidos. Para archivos y detalles largos, correo funciona mejor.
+              </p>
+
+              <div class="contact-channel-list">
+                <a class="contact-channel" data-contact-link="email" href="mailto:contacto@liquidcolors.com">
+                  <span><i class="bi bi-envelope" aria-hidden="true"></i></span>
+                  <div>
+                    <strong>Email</strong>
+                    <small data-contact-text="email">contacto@liquidcolors.com</small>
+                  </div>
+                </a>
+
+                <a class="contact-channel" data-contact-link="whatsapp" href="https://wa.me/5215555555555" target="_blank" rel="noopener">
+                  <span><i class="bi bi-whatsapp" aria-hidden="true"></i></span>
+                  <div>
+                    <strong>WhatsApp</strong>
+                    <small data-contact-text="whatsapp">+52 55 5555 5555</small>
+                  </div>
+                </a>
+
+                <a class="contact-channel" data-contact-link="phone" href="tel:+525555555555">
+                  <span><i class="bi bi-telephone" aria-hidden="true"></i></span>
+                  <div>
+                    <strong>Teléfono</strong>
+                    <small data-contact-text="phone">+52 55 5555 5555</small>
+                  </div>
+                </a>
+
+                <a class="contact-channel" href="./order.html">
+                  <span><i class="bi bi-bag-check" aria-hidden="true"></i></span>
+                  <div>
+                    <strong>Módulo de pedido</strong>
+                    <small>Adjunta diseño, producto y fecha requerida.</small>
+                  </div>
+                </a>
+              </div>
+            </aside>
+
+            <form id="contactForm" class="contact-form card-dark" data-reveal="up" style="--reveal-delay: 0.08s">
+              <div class="contact-form-head">
+                <h3 class="fw-semibold mb-1">Enviar mensaje</h3>
+                <p class="text-muted-300 mb-0">El formulario abre tu app de correo o WhatsApp con el mensaje preparado.</p>
+              </div>
+
+              <div class="row g-3">
+                <div class="col-12 col-md-6">
+                  <label class="form-label" for="contactName">Nombre</label>
+                  <input id="contactName" name="nombre" type="text" class="form-control form-control-lg" autocomplete="name" required />
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <label class="form-label" for="contactEmail">Correo</label>
+                  <input id="contactEmail" name="email" type="email" class="form-control form-control-lg" autocomplete="email" required />
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <label class="form-label" for="contactPhone">WhatsApp o teléfono</label>
+                  <input
+                    id="contactPhone"
+                    name="telefono"
+                    type="tel"
+                    class="form-control form-control-lg"
+                    autocomplete="tel"
+                    placeholder="+52 ..."
+                  />
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <label class="form-label" for="contactChannel">Responder por</label>
+                  <select id="contactChannel" name="canal" class="form-select form-select-lg">
+                    <option value="whatsapp" selected>WhatsApp</option>
+                    <option value="email">Email</option>
+                    <option value="phone">Llamada telefónica</option>
+                    <option value="other">Cualquier canal disponible</option>
+                  </select>
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <label class="form-label" for="contactInterest">Interés</label>
+                  <select id="contactInterest" name="interes" class="form-select form-select-lg">
+                    <option value="Cotización" selected>Cotización</option>
+                    <option value="Seguimiento de pedido">Seguimiento de pedido</option>
+                    <option value="Revisión de diseño">Revisión de diseño</option>
+                    <option value="Mayoreo o empresa">Mayoreo o empresa</option>
+                    <option value="Otro">Otro</option>
+                  </select>
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <label class="form-label" for="contactSubject">Asunto</label>
+                  <input
+                    id="contactSubject"
+                    name="asunto"
+                    type="text"
+                    class="form-control form-control-lg"
+                    placeholder="Ej. Cotización de tazas"
+                    required
+                  />
+                </div>
+
+                <div class="col-12">
+                  <label class="form-label" for="contactMessage">Mensaje</label>
+                  <textarea
+                    id="contactMessage"
+                    name="mensaje"
+                    rows="5"
+                    class="form-control form-control-lg"
+                    placeholder="Cuéntanos producto, cantidad, fecha requerida y detalles del diseño."
+                    required
+                  ></textarea>
+                </div>
+              </div>
+
+              <div class="contact-actions">
+                <button type="submit" class="btn btn-grad btn-lg">
+                  <i class="bi bi-send" aria-hidden="true"></i>
+                  Enviar mensaje
+                </button>
+                <button type="reset" class="btn btn-surface btn-lg">Limpiar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer-dark" role="contentinfo">
+      <div class="container footer-shell">
+        <div class="row g-4 g-lg-5">
+          <div class="col-lg-4" data-reveal="up">
+            <div class="footer-brand">
+              <div class="d-flex align-items-center gap-2 mb-3">
+                <img src="../imgs/logo.svg" class="logo-brand" alt="Liquid Colors" />
+                <span class="fw-semibold fs-5">Liquid Colors</span>
+              </div>
+              <p class="text-muted-300 mb-0">
+                Personalización con sublimación y vinil para marcas, regalos y pedidos con una presentación más cuidada.
+              </p>
+            </div>
+
+            <div class="footer-socials d-flex gap-3 fs-5">
+              <a class="social" href="#" aria-label="Facebook de Liquid Colors"><i class="bi bi-facebook" aria-hidden="true"></i></a>
+              <a class="social" href="#" aria-label="Instagram de Liquid Colors"><i class="bi bi-instagram" aria-hidden="true"></i></a>
+              <a class="social" href="#" aria-label="X de Liquid Colors"><i class="bi bi-twitter-x" aria-hidden="true"></i></a>
+              <a class="social" href="#" aria-label="YouTube de Liquid Colors"><i class="bi bi-youtube" aria-hidden="true"></i></a>
+            </div>
+          </div>
+
+          <div class="col-6 col-lg-2" data-reveal="up" style="--reveal-delay: 0.05s">
+            <h6 class="fw-semibold mb-3">Tienda</h6>
+            <ul class="list-unstyled m-0 footer-links">
+              <li><a href="products.html">Todos los productos</a></li>
+              <li><a href="#destacados">Destacados</a></li>
+              <li><a href="#categorias">Categorías</a></li>
+              <li><a href="./order.html">Personalización</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-lg-3" data-reveal="up" style="--reveal-delay: 0.1s">
+            <h6 class="fw-semibold mb-3">Atención al cliente</h6>
+            <ul class="list-unstyled m-0 footer-links">
+              <li><a href="./order.html">Solicitar pedido</a></li>
+              <li><a href="#contacto">Contacto</a></li>
+              <li><a href="#destacados">Productos populares</a></li>
+              <li><a href="#inicio">Volver al inicio</a></li>
+            </ul>
+          </div>
+
+          <div class="col-12 col-lg-3" data-reveal="up" style="--reveal-delay: 0.15s">
+            <h6 class="fw-semibold mb-3">Empresa</h6>
+            <ul class="list-unstyled m-0 footer-links">
+              
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="./terms.html">Términos y condiciones</a></li>
+              <li><a href="./privacy.html">Política de privacidad</a></li>
+            </ul>
+
+            <a href="/admin/login" class="footer-admin-link text-decoration-none">
+              <i class="bi bi-lock" aria-hidden="true"></i>
+              Iniciar sesión (Admin)
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-bottom text-center text-muted-300 small">
+          © 2026 Liquid Colors. Todos los derechos reservados.
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../scripts/script.js?v=20260429b"></script>
+  </body>
+</html>

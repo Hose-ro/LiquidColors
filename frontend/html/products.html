@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="es" data-bs-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Catálogo | Liquid Colors</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="../css/styles.css?v=20260416b" />
+    <link rel="stylesheet" href="../css/products.css?v=20260415b" />
+  </head>
+  <body>
+    <a class="skip-link" href="#catalogContent">Saltar al catálogo</a>
+
+    <nav class="navbar navbar-expand-lg navbar-dark nav-glass sticky-top" aria-label="Principal">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="./index.html">
+          <img src="../imgs/logo.svg" class="logo-brand" alt="Liquid Colors" />
+          <span class="fw-semibold">Liquid Colors</span>
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+          aria-controls="mainNav"
+          aria-expanded="false"
+          aria-label="Abrir navegación"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div id="mainNav" class="collapse navbar-collapse">
+          <ul class="navbar-nav center-nav">
+            <li class="nav-item"><a class="nav-link" href="./index.html#inicio">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link active" href="./products.html" aria-current="page">Productos</a></li>
+            <li class="nav-item"><a class="nav-link" href="./index.html#categorias">Categorías</a></li>
+            <li class="nav-item"><a class="nav-link nav-link-cta" href="./order.html">Personalización</a></li>
+            <li class="nav-item"><a class="nav-link" href="./blog.html">Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="./index.html#contacto">Contacto</a></li>
+          </ul>
+
+          <div class="nav-actions d-flex align-items-center gap-2 ms-auto">
+            <a class="icon-link" href="#catalogToolbar" aria-label="Buscar en catálogo">
+              <i class="bi bi-search" aria-hidden="true"></i>
+            </a>
+            <a class="icon-link" href="/admin/login" aria-label="Acceso administrador">
+              <i class="bi bi-person" aria-hidden="true"></i>
+            </a>
+            <button
+              id="openCartButton"
+              class="icon-link position-relative"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#shoppingCart"
+              aria-controls="shoppingCart"
+              aria-label="Ver carrito"
+            >
+              <i class="bi bi-cart" aria-hidden="true"></i>
+              <span id="cartBadge" class="badge rounded-pill cart-badge">0</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <header class="products-hero">
+      <div class="container">
+        <div class="products-hero-grid">
+          <div class="products-copy" data-reveal="up">
+           
+            <h1 class="products-title fw-bold mb-3">
+              Todos los <span class="grad-text">productos</span>
+            </h1>
+            <p class="products-lead text-muted-300 mb-0">
+              Explora camisetas, tazas, fundas, bolsas y accesorios personalizables.
+            </p>
+
+          
+
+          <aside id="catalogToolbar" class="catalog-toolbar card-dark" data-reveal="fade">
+            <div class="catalog-toolbar-head">
+              <h2 class="fw-semibold mb-1">Encuentra productos</h2>
+              
+            </div>
+
+            <div class="catalog-search-group">
+              <label class="form-label" for="searchInput">Buscar producto</label>
+              <div class="input-group search-wide">
+                <span class="input-group-text bg-transparent border-secondary-subtle">
+                  <i class="bi bi-search" aria-hidden="true"></i>
+                </span>
+                <input id="searchInput" type="search" class="form-control" placeholder="Buscar producto..." />
+              </div>
+            </div>
+
+            
+
+            <div class="catalog-toolbar-meta">
+              
+              <button id="clearFilters" type="button" class="btn btn-surface btn-sm">Limpiar Busqueda</button>
+            </div>
+          </aside>
+        </div>
+
+        <div class="catalog-pills-wrap" data-reveal="up" style="--reveal-delay: 0.06s">
+          <div class="catalog-pills" role="tablist" aria-label="Categorías del catálogo">
+            <button class="filter-pill active" data-cat="all" type="button">Todo</button>
+            <button class="filter-pill" data-cat="camisetas" type="button">Camisetas</button>
+            <button class="filter-pill" data-cat="tazas" type="button">Tazas</button>
+            <button class="filter-pill" data-cat="fundas" type="button">Fundas</button>
+            <button class="filter-pill" data-cat="bolsas" type="button">Bolsas</button>
+            <button class="filter-pill" data-cat="accesorios" type="button">Accesorios</button>
+          </div>
+
+          <div class="catalog-summary">
+            <strong id="resultsCount">40 productos</strong>
+            <span class="text-muted-300">Disponibles para explorar en esta vista.</span>
+          </div>
+        </div>
+      </div>
+      </div>
+    </header>
+
+    <main id="catalogContent" class="catalog-main">
+      <section id="emptyState" class="catalog-empty card-dark d-none" aria-live="polite">
+        <div class="catalog-empty-icon"><i class="bi bi-search" aria-hidden="true"></i></div>
+        <h2 class="fw-semibold">No encontramos resultados</h2>
+        <p class="text-muted-300 mb-0">
+          Prueba con otro término de búsqueda o limpia los filtros para volver a ver todo el catálogo.
+        </p>
+      </section>
+
+      <div id="catalogSections">
+        <section id="sec-camisetas" class="product-section" data-category="camisetas" data-reveal="up">
+          <div class="container">
+            <div class="section-header">
+              <div>
+                <h3 class="section-title">Camisetas <span class="section-sub">personalizadas</span></h3>
+                <div class="section-copy text-muted-300">Algodón, dri-fit, sublimación o vinil en formatos listos para personalizar.</div>
+              </div>
+              <div class="section-actions">
+                <span class="section-count" data-count-label="camisetas"></span>
+                <button class="btn btn-surface btn-sm" data-more="camisetas" type="button">Ver más</button>
+              </div>
+            </div>
+            <div class="row g-4" id="grid-camisetas"></div>
+          </div>
+        </section>
+
+        <section id="sec-tazas" class="product-section" data-category="tazas" data-reveal="up">
+          <div class="container">
+            <div class="section-header">
+              <div>
+                <h3 class="section-title">Tazas <span class="section-sub">personalizadas</span></h3>
+                <div class="section-copy text-muted-300">Cerámica, térmicas y variantes para oficina, regalo o venta.</div>
+              </div>
+              <div class="section-actions">
+                <span class="section-count" data-count-label="tazas"></span>
+                <button class="btn btn-surface btn-sm" data-more="tazas" type="button">Ver más</button>
+              </div>
+            </div>
+            <div class="row g-4" id="grid-tazas"></div>
+          </div>
+        </section>
+
+        <section id="sec-fundas" class="product-section" data-category="fundas" data-reveal="up">
+          <div class="container">
+            <div class="section-header">
+              <div>
+                <h3 class="section-title">Fundas <span class="section-sub">para celular</span></h3>
+                <div class="section-copy text-muted-300">Modelos compatibles con iPhone y Android para personalización diaria.</div>
+              </div>
+              <div class="section-actions">
+                <span class="section-count" data-count-label="fundas"></span>
+                <button class="btn btn-surface btn-sm" data-more="fundas" type="button">Ver más</button>
+              </div>
+            </div>
+            <div class="row g-4" id="grid-fundas"></div>
+          </div>
+        </section>
+
+        <section id="sec-bolsas" class="product-section" data-category="bolsas" data-reveal="up">
+          <div class="container">
+            <div class="section-header">
+              <div>
+                <h3 class="section-title">Bolsas <span class="section-sub">textiles</span></h3>
+                <div class="section-copy text-muted-300">Opciones eco y tote bag con superficie ideal para branding o regalos.</div>
+              </div>
+              <div class="section-actions">
+                <span class="section-count" data-count-label="bolsas"></span>
+                <button class="btn btn-surface btn-sm" data-more="bolsas" type="button">Ver más</button>
+              </div>
+            </div>
+            <div class="row g-4" id="grid-bolsas"></div>
+          </div>
+        </section>
+
+        <section id="sec-accesorios" class="product-section" data-category="accesorios" data-reveal="up">
+          <div class="container">
+            <div class="section-header">
+              <div>
+                <h3 class="section-title">Accesorios <span class="section-sub">y más</span></h3>
+                <div class="section-copy text-muted-300">Llaveros, mouse pads y piezas pequeñas para pedidos complementarios.</div>
+              </div>
+              <div class="section-actions">
+                <span class="section-count" data-count-label="accesorios"></span>
+                <button class="btn btn-surface btn-sm" data-more="accesorios" type="button">Ver más</button>
+              </div>
+            </div>
+            <div class="row g-4" id="grid-accesorios"></div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer-dark">
+      <div class="container footer-shell">
+        <div class="row g-4 g-lg-5">
+          <div class="col-lg-4">
+            <div class="footer-brand">
+              <div class="d-flex align-items-center gap-2 mb-3">
+                <img src="../imgs/logo.svg" class="logo-brand" alt="Liquid Colors" />
+                <span class="fw-semibold fs-5">Liquid Colors</span>
+              </div>
+              <p class="text-muted-300 mb-0">
+                Catálogo de productos personalizables con sublimación y vinil para marcas, regalos y pedidos especiales.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-6 col-lg-2">
+            <h6 class="fw-semibold mb-3">Catálogo</h6>
+            <ul class="list-unstyled m-0 footer-links">
+              <li><a href="./products.html">Todos los productos</a></li>
+              <li><a href="./index.html#categorias">Categorías</a></li>
+              <li><a href="./order.html">Personalización</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-lg-3">
+            <h6 class="fw-semibold mb-3">Explorar</h6>
+            <ul class="list-unstyled m-0 footer-links">
+              <li><a href="./index.html#inicio">Inicio</a></li>
+              <li><a href="./blog.html">Blog</a></li>
+              <li><a href="./index.html#contacto">Contacto</a></li>
+            </ul>
+          </div>
+
+          <div class="col-12 col-lg-3">
+            <h6 class="fw-semibold mb-3">Empresa</h6>
+            <ul class="list-unstyled m-0 footer-links">
+              <li><a href="./terms.html">Términos y condiciones</a></li>
+              <li><a href="./privacy.html">Política de privacidad</a></li>
+            </ul>
+            <a href="/admin/login" class="footer-admin-link text-decoration-none">
+              <i class="bi bi-lock" aria-hidden="true"></i>
+              Iniciar sesión
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-bottom text-center text-muted-300 small">
+          © 2026 Liquid Colors. Todos los derechos reservados.
+        </div>
+      </div>
+    </footer>
+
+    <div
+      class="offcanvas offcanvas-end cart-canvas"
+      tabindex="-1"
+      id="shoppingCart"
+      aria-labelledby="shoppingCartLabel"
+      data-bs-scroll="true"
+    >
+      <div class="offcanvas-header">
+        <div>
+          <div class="small text-muted-300">Carrito de compras</div>
+          <h2 id="shoppingCartLabel" class="offcanvas-title fw-semibold">Tu selección actual</h2>
+        </div>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+      </div>
+
+      <div class="offcanvas-body">
+        <div class="cart-summary-strip">
+          <div class="cart-summary-card">
+            <span>Items</span>
+            <strong id="cartPanelCount">0</strong>
+          </div>
+          <div class="cart-summary-card">
+            <span>Productos únicos</span>
+            <strong id="cartUniqueCount">0</strong>
+          </div>
+        </div>
+
+        <div id="cartEmptyState" class="cart-empty-state">
+          <div class="cart-empty-icon"><i class="bi bi-bag" aria-hidden="true"></i></div>
+          <h3 class="fw-semibold mb-2">Tu carrito está vacío</h3>
+          <p class="text-muted-300 mb-0">Agrega productos del catálogo para construir una cotización rápida.</p>
+        </div>
+
+        <div id="cartList" class="cart-list" aria-live="polite"></div>
+
+        <div class="cart-footer">
+          <div class="cart-subtotal-row">
+            <span>Subtotal estimado</span>
+            <strong id="cartSubtotal">$0.00</strong>
+          </div>
+
+          <p class="cart-note text-muted-300 mb-0">
+            Este carrito es una preselección demo. El pedido final se confirma desde el módulo de pedido.
+          </p>
+
+          <div class="cart-actions">
+            <button id="clearCartBtn" type="button" class="btn btn-surface">Vaciar carrito</button>
+            <a href="./order.html" class="btn btn-grad">Solicitar pedido</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL: Reseñas de producto -->
+    <div class="modal fade" id="modalResenas" tabindex="-1" aria-labelledby="modalResenasLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content" style="background:#111827; border:1px solid rgba(255,255,255,.08); border-radius:16px;">
+          <div class="modal-header border-0 pb-0">
+            <div>
+              <h5 class="modal-title fw-semibold" id="modalResenasLabel">Reseñas del producto</h5>
+              <p class="text-muted small mb-0" id="modalResenasTitulo"></p>
+            </div>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+
+          <div class="modal-body">
+            <!-- Resumen de calificaciones -->
+            <div id="resenasSummary" class="resenas-summary mb-4 d-none">
+              <div class="d-flex align-items-center gap-4 flex-wrap">
+                <div class="text-center">
+                  <div class="resenas-promedio" id="resenasPromedio">0.0</div>
+                  <div class="resenas-stars-big" id="resenasStarsBig" aria-label="Calificación promedio"></div>
+                  <div class="text-muted small" id="resenasTotal">0 reseñas</div>
+                </div>
+                <div class="resenas-distribucion flex-grow-1" id="resenasDistribucion"></div>
+              </div>
+            </div>
+
+            <!-- Estado vacío -->
+            <div id="resenasEmpty" class="text-center py-4 d-none">
+              <i class="bi bi-chat-square-text fs-2 text-muted mb-2 d-block" aria-hidden="true"></i>
+              <p class="text-muted mb-0">Este producto aún no tiene reseñas aprobadas.<br>¡Sé el primero en opinar!</p>
+            </div>
+
+            <!-- Lista de reseñas -->
+            <div id="resenasLista" class="resenas-lista mb-4" aria-live="polite"></div>
+
+            <!-- Formulario de nueva reseña -->
+            <div class="resenas-form-wrap">
+              <h6 class="fw-semibold mb-3">
+                <i class="bi bi-pencil-square me-2" aria-hidden="true"></i>Dejar una reseña
+              </h6>
+
+              <div id="resenaFormSuccess" class="alert alert-success d-none" role="alert">
+                <i class="bi bi-check2-circle me-2" aria-hidden="true"></i>
+                Gracias. Tu reseña será revisada antes de publicarse.
+              </div>
+
+              <form id="formResena" novalidate>
+                <input type="hidden" id="resenaProductId" value="" />
+
+                <!-- Selector de estrellas -->
+                <div class="mb-3">
+                  <label class="form-label small fw-semibold" id="labelStarPicker">Calificación <span class="text-danger">*</span></label>
+                  <div class="star-picker" id="starPicker" role="group" aria-labelledby="labelStarPicker">
+                    <button type="button" class="star-btn" data-val="1" aria-label="1 estrella"><i class="bi bi-star" aria-hidden="true"></i></button>
+                    <button type="button" class="star-btn" data-val="2" aria-label="2 estrellas"><i class="bi bi-star" aria-hidden="true"></i></button>
+                    <button type="button" class="star-btn" data-val="3" aria-label="3 estrellas"><i class="bi bi-star" aria-hidden="true"></i></button>
+                    <button type="button" class="star-btn" data-val="4" aria-label="4 estrellas"><i class="bi bi-star" aria-hidden="true"></i></button>
+                    <button type="button" class="star-btn" data-val="5" aria-label="5 estrellas"><i class="bi bi-star" aria-hidden="true"></i></button>
+                  </div>
+                  <div class="invalid-feedback d-none" id="errorRating">Selecciona entre 1 y 5 estrellas.</div>
+                </div>
+
+                <!-- Comentario -->
+                <div class="mb-3">
+                  <label class="form-label small fw-semibold" for="resenaComentario">Comentario <span class="text-danger">*</span></label>
+                  <textarea
+                    id="resenaComentario"
+                    class="form-control"
+                    rows="3"
+                    minlength="5"
+                    maxlength="1000"
+                    placeholder="Cuéntanos tu experiencia con este producto (mínimo 5 caracteres)..."
+                    required
+                    aria-describedby="resenaComentarioHelp"
+                  ></textarea>
+                  <div id="resenaComentarioHelp" class="form-text text-muted">Máximo 1000 caracteres.</div>
+                  <div class="invalid-feedback" id="errorComentario">El comentario debe tener entre 5 y 1000 caracteres.</div>
+                </div>
+
+                <!-- Nombre (opcional) -->
+                <div class="row g-3 mb-3">
+                  <div class="col-md-6">
+                    <label class="form-label small fw-semibold" for="resenaNombre">Tu nombre <span class="text-muted">(opcional)</span></label>
+                    <input
+                      type="text"
+                      id="resenaNombre"
+                      class="form-control"
+                      maxlength="100"
+                      placeholder="Ej. María García"
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label small fw-semibold" for="resenaEmail">Email <span class="text-muted">(opcional)</span></label>
+                    <input
+                      type="email"
+                      id="resenaEmail"
+                      class="form-control"
+                      maxlength="180"
+                      placeholder="ejemplo@correo.com"
+                    />
+                    <div class="invalid-feedback" id="errorEmail">Ingresa un email válido.</div>
+                  </div>
+                </div>
+
+                <button type="submit" id="btnEnviarResena" class="btn btn-grad">
+                  <i class="bi bi-send me-2" aria-hidden="true"></i>Enviar reseña
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../scripts/products.js?v=20260421a"></script>
+    <script src="../scripts/resenas.js?v=20260506a"></script>
+  </body>
+</html>
